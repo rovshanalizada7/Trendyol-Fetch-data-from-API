@@ -199,7 +199,8 @@
          `;
     
          })
-            } else {
+     } 
+            else {
                 wishlistContainer.innerHTML = '<p>No items in your wishlist yet.</p>';
             }
         }
@@ -208,6 +209,7 @@
     
 
       // Function to remove item from wishlist
+      // new chamges
         function removeFromWishlist(index) {
             wishlist.splice(index, 1); 
             localStorage.setItem('wishlist', JSON.stringify(wishlist)); 
@@ -238,30 +240,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-//  function removeFromWishlist(index) {
-    //    wishlist.splice(index, 1); 
-    //    localStorage.setItem('wishlist', JSON.stringify(wishlist));  
-    //    getWishlist();  
-    //  }
-
-
-       // Event listener for removing items
-    //    wishlistContainer.addEventListener('click', (e) => {
-    //    if (e.target.classList.contains('fa-x')) {
-    //     const card = e.target.closest('.card-container'); 
-    //     const index = card.getAttribute('data-index');  
-    //     removeFromWishlist(index); 
-    //    }
-    //  });
