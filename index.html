@@ -48,7 +48,8 @@
                     <span>Giriş Yap</span>
                 </div>
                 <div class="favorites" style="width: 86px;height: 40px;">
-                   <a href="./wishlist.html"><i class="fa-regular fa-heart wishlist-icon" style="font-size: 16px;"></i></a>
+                    <a href="./wishlist.html"><i class="fa-regular fa-heart wishlist-icon"
+                            style="font-size: 16px;"></i></a>
                     <span>Favorilerim</span>
                 </div>
                 <div class="basket">
@@ -57,7 +58,7 @@
                 </div>
             </div>
         </div>
-        
+
     </header>
 
     <main>
@@ -176,9 +177,17 @@
                 <div class="cards">
                     <h1>Popüler Ürünler</h1>
 
+                    <div style="margin: 1rem 0;font-size: 18px;">
+                        <label for="sort" style="font-weight: bold;">Sort by Price: </label>
+                       <select id="sort" onchange="sortProductsByPrice()" style="margin-left: 5px;padding:4px;border: none;border-radius: 5px;outline: none;">
+                        <option value="cheap">Cheap to Expensive</option>
+                        <option value="expensive">Expensive to Cheap</option>
+                       </select>
+                    </div>
+
                     <div style="display: flex;gap:1.7rem;flex-wrap: wrap;" class="cards-contentt">
 
-                        <div class="card-container">
+                        <div class="card-container" data-price="">
 
                             <div class="card-image1">
                                 <img src="https://cdn.dsmcdn.com/ty431/product/media/images/20220512/18/109922910/224331887/1/1_org.jpg"
@@ -212,8 +221,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <i class="fa-regular fa-heart fa-wishlist"></i>
-                            
+
+                            <i style="color: red;" class="fa-solid fa-heart fa-wishlist"></i>
+
                         </div>
 
                     </div>
@@ -224,7 +234,7 @@
 
     </main>
 
-    <footer >
+    <footer>
         <div class="container">
             <div class="footer-section">
 
@@ -241,14 +251,13 @@
 
                 <div class="payment-icons" style="display: flex;align-items: center;margin-top: 1.5rem;">
                     <img style="width: 55px; height: 30px;"
-                        src="https://cdn.dsmcdn.com/frontend/web/assets/images/troy-logo-transparent.png"
-                        alt="Troy">
+                        src="https://cdn.dsmcdn.com/frontend/web/assets/images/troy-logo-transparent.png" alt="Troy">
                     <img style="width: 62px; height: 45px;"
                         src="https://cdn.dsmcdn.com/web/production/footer-master-card.png" alt="Mastercard">
                     <img style="width: 55px; height: 65px;"
                         src="https://cdn.dsmcdn.com/web/production/footer-visa-black.png" alt="Visa">
-                    <img style="width: 55px; height: 36px;"
-                        src="https://cdn.dsmcdn.com/web/production/footer-amex.png" alt="American Express">
+                    <img style="width: 55px; height: 36px;" src="https://cdn.dsmcdn.com/web/production/footer-amex.png"
+                        alt="American Express">
                 </div>
             </div>
 
@@ -264,8 +273,8 @@
                 </ul>
 
                 <div class="app-icons" style="margin-top: 1.7rem;">
-                    <a href="#"><img style="margin-bottom: 5px;"
-                            src="https://cdn.dsmcdn.com/web/production/iosV2.svg" alt="App Store"></a>
+                    <a href="#"><img style="margin-bottom: 5px;" src="https://cdn.dsmcdn.com/web/production/iosV2.svg"
+                            alt="App Store"></a>
                     <a href="#"><img style="margin-bottom: 5px;"
                             src="https://cdn.dsmcdn.com/web/production/googleV2.svg" alt="Google Play"></a>
                     <a href="#"><img src="https://cdn.dsmcdn.com/web/production/huaweiV2.svg" alt="App Gallery"></a>
@@ -283,8 +292,7 @@
                 </ul>
                 <div class="social-icons" style="margin-top: 1.7rem;">
                     <a href="#"><img src="https://cdn.dsmcdn.com/web/production/facebookV2.svg" alt="Facebook"></a>
-                    <a href="#"><img src="https://cdn.dsmcdn.com/web/production/instagramV2.svg"
-                            alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn.dsmcdn.com/web/production/instagramV2.svg" alt="Instagram"></a>
                     <a href="#"><img src="https://cdn.dsmcdn.com/web/production/twitterV2.svg" alt="Twitter"></a>
                     <a href="#"><img src="https://cdn.dsmcdn.com/web/production/youtubeV2.svg" alt="YouTube"></a>
                 </div>

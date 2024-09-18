@@ -22,7 +22,7 @@ function displayProducts (productsDisplay) {
 
     productsDisplay.forEach(product => {
         cardsContent.innerHTML +=`
-           <div class="card-container">
+           <div class="card-container" data-price=${product.price}>
                 <div class="card-image1">
                     <img src="${product.image}" class="card-image"></img>
                 </div>
@@ -52,7 +52,7 @@ function displayProducts (productsDisplay) {
                         <span>Çok Al Az Öde</span>
                     </div>
                 </div>
-               <i class="fa-regular fa-heart fa-wishlist"></i>
+               <i id="wishlist-icon" style="color: red;"  class="fa-solid fa-heart fa-wishlist"></i>
             </div>
         `
     })
@@ -87,9 +87,6 @@ searchProducts()
    }
 
    scrollMenu ()
-
-
-
   
 
   // Function to add the product to the wishlist
@@ -128,6 +125,41 @@ function attachWishlistListeners() {
         });
       });
 }
+
+
+
+// sort products by price
+function sortProductsByPrice() {
+    const productList = document.querySelector('.cards-contentt');
+    const products = Array.from(document.getElementsByClassName('card-container'));
+
+    const sortOption = document.getElementById('sort').value;
+
+    const sortedProducts = products.sort((a, b) => {
+        const priceA = parseInt(a.getAttribute('data-price'));
+        const priceB = parseInt(b.getAttribute('data-price'));
+
+        if (sortOption === 'cheap') {
+            return priceA - priceB;  
+        } else {
+            return priceB - priceA;  
+        }
+    });
+
+    productList.innerHTML = '';
+    
+
+    sortedProducts.forEach(product => {
+        productList.appendChild(product);
+    });
+}
+
+
+
+
+
+
+
 
 
 
