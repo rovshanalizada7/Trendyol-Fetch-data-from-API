@@ -22,7 +22,7 @@ function displayProducts (productsDisplay) {
 
     productsDisplay.forEach(product => {
         cardsContent.innerHTML +=`
-           <div class="card-container" data-price=${product.price}>
+           <div class="card-container">
                 <div class="card-image1">
                     <img src="${product.image}" class="card-image"></img>
                 </div>
@@ -58,6 +58,8 @@ function displayProducts (productsDisplay) {
     })
 }
 
+
+// detail page
 
 function getDetail (id) {
     window.location.href =`./assets/pages/detail.html?id=${id}`
@@ -136,30 +138,36 @@ function attachWishlistListeners() {
 
 
 // sort products by price
-function sortProductsByPrice() {
-    const productList = document.querySelector('.cards-contentt');
-    const products = Array.from(document.getElementsByClassName('card-container'));
 
+function sortProducts() {
     const sortOption = document.getElementById('sort').value;
-
-    const sortedProducts = products.sort((a, b) => {
-        const priceA = parseInt(a.getAttribute('data-price'));
-        const priceB = parseInt(b.getAttribute('data-price'));
-
-        if (sortOption === 'cheap') {
-            return priceA - priceB;  
-        } else {
-            return priceB - priceA;  
-        }
-    });
-
-    productList.innerHTML = '';
+    let cards = Array.from(document.querySelectorAll('.card-container'));
     
+    if (sortOption === 'title') {
+        cards.sort((a, b) => {
+            let titleA = a.querySelector('.card-title').innerHTML.trim();
+            let titleB = b.querySelector('.card-title').innerHTML.trim();
+            return titleA.localeCompare(titleB);
+        });
+    } else if (sortOption === 'cheap') {
+        cards.sort((a, b) => {
+            let priceA = parseInt(a.querySelector('.card-price').innerHTML)
+            let priceB = parseInt(b.querySelector('.card-price').innerHTML)
+            return priceA - priceB;
+        });
+    } else if (sortOption === 'expensive') {
+        cards.sort((a, b) => {
+            let priceA = parseInt(a.querySelector('.card-price').innerHTML)
+            let priceB = parseInt(b.querySelector('.card-price').innerHTML)
+            return priceB - priceA;
+        });
+    }
 
-    sortedProducts.forEach(product => {
-        productList.appendChild(product);
-    });
+    const container = document.querySelector('.cards-contentt');
+    container.innerHTML = ''; 
+    cards.forEach(card => container.appendChild(card));  
 }
+
 
 
 
