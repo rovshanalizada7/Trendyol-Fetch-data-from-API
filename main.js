@@ -27,7 +27,7 @@ function displayProducts (productsDisplay) {
                     <img src="${product.image}" class="card-image"></img>
                 </div>
                 <div class="card-text">
-                    <h3 class="card-title">${product.title}</h3>
+                    <h3 onclick="getDetail(${product.id})" class="card-title">${product.title}</h3>
                     <div style="overflow: hidden; width: 290px; height: 100px;">
                         <p class="card-description">${product.description}</p>
                     </div>
@@ -57,6 +57,13 @@ function displayProducts (productsDisplay) {
         `
     })
 }
+
+
+function getDetail (id) {
+    window.location.href =`./assets/pages/detail.html?id=${id}`
+}
+
+
 
 // add search functionality 
 
@@ -109,7 +116,7 @@ searchProducts()
     if (!isProductInWishlist) {
       wishlist.push(product);
       localStorage.setItem('wishlist', JSON.stringify(wishlist));
-      alert('Product added to wishlist!');
+    //   alert('Product added to wishlist!');
     } else {
       alert('This product is already in your wishlist.');
     }

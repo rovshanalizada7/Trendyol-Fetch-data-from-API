@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+    color: gray;
+    font-size: 35px;
+    font-family:sans-serif;
+}
+button a{
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(28, 25, 25);
+    font-weight: bold;
+}
+button {
+    position: absolute;
+    right: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow:3px 3px 3px grey;
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+#detail{
+    width: 50%;
+    display: flex;
+    justify-content: space-between ;
+}

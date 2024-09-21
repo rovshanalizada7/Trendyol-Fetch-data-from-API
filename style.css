@@ -350,6 +350,7 @@ nav ul li a .new-badge {
     font-size: 15px;
     color: #333;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .card-description {
@@ -394,7 +395,12 @@ nav ul li a .new-badge {
 }
 
 
-
+.wishlist-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
 
 footer {
     background-color: black;
@@ -557,6 +563,7 @@ footer {
 
     .footer-section {
         width: 250px;
+        margin-top: 1.7rem;
     }
 
     .container {
@@ -568,5 +575,19 @@ footer {
     .search i {
         right: -11%;
         top: 41%;
+    }
+    .navigation-wrapper{
+        display: none;
+    }
+    .sct1-content{
+        flex-wrap: wrap;
+        width: 90%;
+    }
+    .section1{
+        height: auto;
+    }
+    .header-bottom .logo{
+        display: flex;
+        align-items: center;
     }
 }
